@@ -1,14 +1,14 @@
 package com.mystudy.cafetest.vo;
 
 public class CustomerVO {
-	private String custid;
+	private int custid;
 	private String custname;
 	private String password;
 	private String phone;
 	
 	public CustomerVO() {}
 	
-	public CustomerVO(String custid, String custname, String password, String phone) {
+	public CustomerVO(int custid, String custname, String password, String phone) {
 		super();
 		this.custid = custid;
 		this.custname = custname;
@@ -16,11 +16,11 @@ public class CustomerVO {
 		this.phone = phone;
 	}
 
-	public String getCustid() {
+	public int getCustid() {
 		return custid;
 	}
 
-	public void setCustid(String custid) {
+	public void setCustid(int custid) {
 		this.custid = custid;
 	}
 

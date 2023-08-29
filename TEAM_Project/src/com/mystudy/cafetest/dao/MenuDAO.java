@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mystudy.cafetest.vo.MenuVO;
-import com.mystudy.cafetestcommon.CommonJDBCUtill;
+import com.mystudy.cafetestcommon.CommonJDBCUtil;
 
 
 public class MenuDAO {
 	
-	// 메뉴 가격 조회
+	// 메뉴id로 메뉴 가격 조회
 	public MenuVO selectPrice(int selectMenuId) {
 		MenuVO vo = null;
 		Connection conn =null;
@@ -22,7 +22,7 @@ public class MenuDAO {
 		ResultSet rs = null;
 		
 		try {
-			conn = CommonJDBCUtill.getConnection();
+			conn = CommonJDBCUtil.getConnection();
 			StringBuilder sql = new StringBuilder(); 
 			sql.append("SELECT * ");
 			sql.append(" FROM MENU ");
@@ -44,7 +44,7 @@ public class MenuDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			CommonJDBCUtill.close(conn, pstmt, rs);
+			CommonJDBCUtil.close(conn, pstmt, rs);
 		}
 		return vo;
 	}
@@ -58,7 +58,7 @@ public class MenuDAO {
 		ResultSet rs = null;
 
 		try {
-			conn = CommonJDBCUtill.getConnection();
+			conn = CommonJDBCUtil.getConnection();
 			StringBuilder sql = new StringBuilder(); 
 			sql.append("SELECT MENUID, NAME, PRICE  ");
 			sql.append(" FROM MENU ");
@@ -82,7 +82,7 @@ public class MenuDAO {
 			e.printStackTrace();
 			System.out.println("[예외발생] : " + e.getMessage());
 		} finally { 
-			CommonJDBCUtill.close(conn, pstmt, rs);
+			CommonJDBCUtil.close(conn, pstmt, rs);
 		}
 		
 		return list;		
@@ -95,7 +95,7 @@ public class MenuDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
-			conn = CommonJDBCUtill.getConnection();
+			conn = CommonJDBCUtil.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
 			sql.append("INSERT INTO MENU ");
@@ -114,7 +114,7 @@ public class MenuDAO {
 		} catch (Exception e) {
 			count = -1;
 		} finally {
-			CommonJDBCUtill.close(conn, pstmt);
+			CommonJDBCUtil.close(conn, pstmt);
 		}
 		
 		return count;
@@ -126,7 +126,7 @@ public class MenuDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
-			conn = CommonJDBCUtill.getConnection();
+			conn = CommonJDBCUtil.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
 			sql.append("UPDATE MENU ");
@@ -146,7 +146,7 @@ public class MenuDAO {
 		} catch (Exception e) {
 			count = -1;
 		} finally {
-			CommonJDBCUtill.close(conn, pstmt);
+			CommonJDBCUtil.close(conn, pstmt);
 		}
 		
 		return count;
@@ -160,7 +160,7 @@ public class MenuDAO {
 		
 		try {
 			//2. DB연결 - Connection 객체 생성 <- DriverManager
-			conn = CommonJDBCUtill.getConnection();
+			conn = CommonJDBCUtil.getConnection();
 			
 			//3. Statement 문 실행(SQL 문 실행)
 			String sql = "DELETE FROM MENU WHERE MENUID = ?";		
@@ -178,7 +178,7 @@ public class MenuDAO {
 			System.out.println("[예외발생] 작업 중 예외 발생 : " +e.getMessage());
 			count = -1; 
 		} finally {
-			CommonJDBCUtill.close(conn, pstmt);
+			CommonJDBCUtil.close(conn, pstmt);
 		}
 		
 		return count;

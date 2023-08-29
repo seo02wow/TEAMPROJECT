@@ -2,16 +2,16 @@ package com.mystudy.cafetest.vo;
 
 public class StampVO {
 	private String stampId;
-	private String stampCnt;
-	private String custId;
+	private int stampCnt;
+	private int custId;
 	
 	public StampVO() {}
 	
-	public StampVO(String stampId, String stampCnt, String custId) {
+	public StampVO(String stampId, int stampCnt, int string) {
 		super();
 		this.stampId = stampId;
 		this.stampCnt = stampCnt;
-		this.custId = custId;
+		this.custId = string;
 	}
 
 	public String getStampId() {
@@ -22,19 +22,19 @@ public class StampVO {
 		this.stampId = stampId;
 	}
 
-	public String getStampCnt() {
+	public int getStampCnt() {
 		return stampCnt;
 	}
 
-	public void setStampCnt(String stampCnt) {
+	public void setStampCnt(int stampCnt) {
 		this.stampCnt = stampCnt;
 	}
 
-	public String getCustId() {
+	public int getCustId() {
 		return custId;
 	}
 
-	public void setCustId(String custId) {
+	public void setCustId(int custId) {
 		this.custId = custId;
 	}
 

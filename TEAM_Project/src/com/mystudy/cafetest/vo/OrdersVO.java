@@ -2,12 +2,12 @@ package com.mystudy.cafetest.vo;
 
 public class OrdersVO {
 	private int orderId;
-	private String custId;
+	private int custId;
 	private int totalPrice;
 	
 	public OrdersVO() {}
 	
-	public OrdersVO(int orderId, String custId, int totalPrice) {
+	public OrdersVO(int orderId, int custId, int totalPrice) {
 		super();
 		this.orderId = orderId;
 		this.custId = custId;
@@ -22,11 +22,11 @@ public class OrdersVO {
 		this.orderId = orderId;
 	}
 
-	public String getCustId() {
+	public int getCustId() {
 		return custId;
 	}
 
-	public void setCustId(String custId) {
+	public void setCustId(int custId) {
 		this.custId = custId;
 	}
 
